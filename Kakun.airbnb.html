@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Optimization -->
+    <title>Kakun Airbnb | Hospedaje y Casas de Playa frente al mar en Puerto Cortés y Cieneguita, Honduras</title>
+    <meta name="description" content="Descubre el hospedaje perfecto en Kakun Airbnb. Ofrecemos alquiler de hermosas casas de playa y apartamentos en Cieneguita y Puerto Cortés, Honduras. Reserva directo por WhatsApp.">
+    <meta name="keywords" content="Airbnb en Puerto Cortés, Airbnb en Cieneguita, Hospedaje frente al mar en Honduras, casa de playa Honduras, alquiler vacacional Puerto Cortés, vacaciones Cieneguita, turismo Honduras">
+    <meta name="author" content="Kakun Airbnb">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph (Facebook / WhatsApp sharing) -->
+    <meta property="og:title" content="Kakun Airbnb | Tu escapada perfecta frente al mar en Honduras">
+    <meta property="og:description" content="Descubre los mejores alojamientos tropicales frente al mar en Cieneguita, Puerto Cortés. Reserva fácil y rápido.">
+    <meta property="og:image" content="assets/images/hero_cieneguita.png">
+    <meta property="og:url" content="https://kakunairbnb.com">
+    <meta property="og:type" content="website">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- CSS Libraries -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <header class="main-header" id="main-header">
+        <div class="container navbar-container">
+            <a href="#home" class="logo" id="logo-link">
+                <img src="assets/images/logo.jpg" alt="Kakun Airbnb Logo" class="logo-img">
+            </a>
+            
+            <nav class="main-nav" id="main-navigation">
+                <ul>
+                    <li><a href="#home" class="nav-link active">Inicio</a></li>
+                    <li><a href="#accommodations" class="nav-link">Alojamientos</a></li>
+                    <li><a href="#map-section" class="nav-link">Mapa</a></li>
+                    <li><a href="#gallery" class="nav-link">Galería</a></li>
+                    <li><a href="#attractions" class="nav-link">Atracciones</a></li>
+                    <li><a href="#reviews" class="nav-link">Opiniones</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="https://wa.me/50498527102?text=Hola,%20deseo%20obtener%20informaci%C3%B3n%20sobre%20una%20reserva%20en%20Kakun%20Airbnb." 
+                   target="_blank" rel="noopener noreferrer" class="btn btn-primary nav-btn" id="nav-booking-btn">
+                    <i class="fa-solid fa-calendar-check"></i> Reservar Ahora
+                </a>
+                <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Abrir menú de navegación">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Drawer Navigation -->
+    <div class="mobile-drawer" id="mobile-drawer">
+        <div class="drawer-header">
+            <div class="logo">
+                <img src="assets/images/logo.jpg" alt="Kakun Airbnb Logo" class="logo-img">
+            </div>
+            <button class="drawer-close" id="drawer-close" aria-label="Cerrar menú">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <nav class="drawer-nav">
+            <ul>
+                <li><a href="#home" class="drawer-link">Inicio</a></li>
+                <li><a href="#accommodations" class="drawer-link">Alojamientos</a></li>
+                <li><a href="#map-section" class="drawer-link">Mapa</a></li>
+                <li><a href="#gallery" class="drawer-link">Galería</a></li>
+                <li><a href="#attractions" class="drawer-link">Atracciones</a></li>
+                <li><a href="#reviews" class="drawer-link">Opiniones</a></li>
+            </ul>
+            <a href="https://wa.me/50498527102?text=Hola,%20deseo%20obtener%20informaci%C3%B3n%20sobre%20una%20reserva%20en%20Kakun%20Airbnb." 
+               target="_blank" rel="noopener noreferrer" class="btn btn-primary drawer-btn">
+                <i class="fa-solid fa-calendar-check"></i> Reservar por WhatsApp
+            </a>
+        </nav>
+    </div>
+    <div class="drawer-overlay" id="drawer-overlay"></div>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section" id="home">
+            <div class="hero-background">
+                <img src="assets/images/hero_cieneguita.png" alt="Playa Cieneguita en Puerto Cortés, Honduras" class="hero-bg-img">
+                <div class="hero-overlay"></div>
+            </div>
+            <div class="container hero-content-container">
+                <div class="hero-content">
+                    <span class="hero-badge"><i class="fa-solid fa-location-dot"></i> Cieneguita, Puerto Cortés</span>
+                    <h1 class="hero-title">Tu escapada perfecta frente al mar</h1>
+                    <p class="hero-subtitle">Descubre los mejores alojamientos en Puerto Cortés, Honduras</p>
+                    <div class="hero-actions">
+                        <a href="#accommodations" class="btn btn-primary btn-large">
+                            <i class="fa-solid fa-circle-arrow-down"></i> Reservar Ahora
+                        </a>
+                        <a href="#map-section" class="btn btn-secondary btn-large">
+                            <i class="fa-solid fa-map-location-dot"></i> Ver en el Mapa
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Search & Filters Container -->
+        <section class="search-filter-section">
+            <div class="container">
+                <div class="search-container-box" id="search-filter-box">
+                    <form class="search-form" id="search-form" onsubmit="event.preventDefault();">
+                        <!-- Location Filter -->
+                        <div class="filter-group">
+                            <label for="filter-location"><i class="fa-solid fa-location-crosshairs"></i> Ubicación</label>
+                            <select id="filter-location" class="filter-control">
+                                <option value="all">Cualquier ubicación</option>
+                                <option value="cieneguita">Cieneguita</option>
+                                <option value="puerto-cortes">Puerto Cortés</option>
+                            </select>
+                        </div>
+                        
+                        <!-- Guests Filter -->
+                        <div class="filter-group">
+                            <label for="filter-guests"><i class="fa-solid fa-user-group"></i> Huéspedes</label>
+                            <div class="guests-input-wrapper">
+                                <button type="button" class="guest-btn" id="guest-minus">-</button>
+                                <input type="number" id="filter-guests" class="filter-control-number" value="1" min="1" max="15" readonly>
+                                <button type="button" class="guest-btn" id="guest-plus">+</button>
+                            </div>
+                        </div>
+
+                        <!-- Price Filter -->
+                        <div class="filter-group price-filter-group">
+                            <div class="price-labels">
+                                <label for="filter-price"><i class="fa-solid fa-tags"></i> Precio Máx.</label>
+                                <span class="price-val" id="price-value">$150/noche</span>
+                            </div>
+                            <input type="range" id="filter-price" class="filter-control-range" min="70" max="150" value="150" step="5">
+                            <div class="range-limits">
+                                <span>$70</span>
+                                <span>$150</span>
+                            </div>
+                        </div>
+
+                        <!-- Clear Filters -->
+                        <div class="filter-group btn-group-filter">
+                            <button type="button" class="btn btn-accent" id="btn-clear-filters">
+                                <i class="fa-solid fa-filter-circle-xmark"></i> Limpiar
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Accommodations Section -->
+        <section class="section accommodations-section" id="accommodations">
+            <div class="container">
+                <div class="section-header">
+                    <span class="sub-title">Nuestras Estancias</span>
+                    <h2 class="section-title">Encuentra tu hospedaje ideal</h2>
+                    <p class="section-desc">Selecciona entre nuestras exclusivas propiedades con las mejores comodidades y accesos directos al mar.</p>
+                </div>
+
+                <!-- Accommodations Grid -->
+                <div class="accommodations-grid" id="accommodations-container">
+                    <!-- Cards will be dynamically rendered / filtered by Javascript for better user experience. -->
+                </div>
+                
+                <!-- No Results Message -->
+                <div class="no-results" id="no-results-msg" style="display: none;">
+                    <i class="fa-solid fa-house-laptop"></i>
+                    <h3>No encontramos alojamientos</h3>
+                    <p>Intenta cambiar los filtros de búsqueda para encontrar más opciones disponibles.</p>
+                    <button class="btn btn-primary" id="btn-reset-filters-msg">Ver todos los alojamientos</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Map Section -->
+        <section class="section map-section" id="map-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="sub-title">Ubicación Privilegiada</span>
+                    <h2 class="section-title">Explora Cieneguita y Puerto Cortés</h2>
+                    <p class="section-desc">Visualiza la ubicación exacta de nuestras casas de playa y los principales puntos turísticos de la zona.</p>
+                </div>
+                
+                <div class="map-wrapper">
+                    <div id="map" class="interactive-map"></div>
+                    <div class="map-legend">
+                        <h4><i class="fa-solid fa-map-pin"></i> Referencias del Mapa</h4>
+                        <ul>
+                            <li><span class="legend-dot accommodation"></span> Alojamientos Kakun</li>
+                            <li><span class="legend-dot attraction"></span> Puntos de Interés / Playas</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section class="section gallery-section" id="gallery">
+            <div class="container">
+                <div class="section-header">
+                    <span class="sub-title">Galería de Fotos</span>
+                    <h2 class="section-title">Un vistazo a tu próximo destino</h2>
+                    <p class="section-desc">Explora la belleza natural de Puerto Cortés, nuestras cómodas instalaciones y atardeceres mágicos.</p>
+                </div>
+
+                <div class="gallery-grid" id="gallery-grid-container">
+                    <!-- Photo 1: Playa Cieneguita -->
+                    <div class="gallery-item" data-category="beach">
+                        <img src="assets/images/hero_cieneguita.png" alt="Playa Cieneguita, Puerto Cortés">
+                        <div class="gallery-overlay">
+                            <span class="gallery-tag">Playa Cieneguita</span>
+                            <h3 class="gallery-title">Aguas cálidas y arena suave</h3>
+                            <span class="gallery-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+                        </div>
+                    </div>
+                    <!-- Photo 2: Casa Playa Moderna -->
+                    <div class="gallery-item" data-category="house">
+                        <img src="assets/images/beach_house_1.png" alt="Casa de Playa Moderna Exterior">
+                        <div class="gallery-overlay">
+                            <span class="gallery-tag">Casas de Playa</span>
+                            <h3 class="gallery-title">Arquitectura tropical moderna</h3>
+                            <span class="gallery-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+                        </div>
+                    </div>
+                    <!-- Photo 3: Sunset -->
+                    <div class="gallery-item" data-category="sunset">
+                        <img src="assets/images/atardecer_puerto_cortes.png" alt="Atardecer en Puerto Cortés">
+                        <div class="gallery-overlay">
+                            <span class="gallery-tag">Atardecer</span>
+                            <h3 class="gallery-title">Atardeceres dorados en la bahía</h3>
+                            <span class="gallery-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+                        </div>
+                    </div>
+                    <!-- Photo 4: Habitación -->
+                    <div class="gallery-item" data-category="room">
+                        <img src="assets/images/habitacion_1.png" alt="Habitación moderna con vista al mar">
+                        <div class="gallery-overlay">
+                            <span class="gallery-tag">Habitaciones</span>
+                            <h3 class="gallery-title">Descanso premium frente al mar</h3>
+                            <span class="gallery-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+                        </div>
+                    </div>
+                    <!-- Photo 5: Piscina -->
+                    <div class="gallery-item" data-category="pool">
+                        <img src="assets/images/piscina_1.png" alt="Piscina infinity con palmeras">
+                        <div class="gallery-overlay">
+                            <span class="gallery-tag">Piscinas</span>
+                            <h3 class="gallery-title">Refrescantes áreas de relax</h3>
+                            <span class="gallery-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+                        </div>
+                    </div>
+                    <!-- Photo 6: Casa de Playa 2 -->
+                    <div class="gallery-item" data-category="house">
+                        <img src="assets/images/beach_house_2.png" alt="Casa de Playa al atardecer">
+                        <div class="gallery-overlay">
+                            <span class="gallery-tag">Casas de Playa</span>
+                            <h3 class="gallery-title">Diseño y confort integrados</h3>
+                            <span class="gallery-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lightbox Modal for Gallery -->
+        <div class="lightbox" id="lightbox-modal">
+            <button class="lightbox-close" id="lightbox-close-btn" aria-label="Cerrar visualizador"><i class="fa-solid fa-xmark"></i></button>
+            <button class="lightbox-nav lightbox-prev" id="lightbox-prev-btn" aria-label="Imagen anterior"><i class="fa-solid fa-chevron-left"></i></button>
+            <img src="" alt="" class="lightbox-img" id="lightbox-img">
+            <button class="lightbox-nav lightbox-next" id="lightbox-next-btn" aria-label="Siguiente imagen"><i class="fa-solid fa-chevron-right"></i></button>
+            <div class="lightbox-caption" id="lightbox-caption">Título de la imagen</div>
+        </div>
+
+        <!-- Attractions Section -->
+        <section class="section attractions-section" id="attractions">
+            <div class="container">
+                <div class="section-header">
+                    <span class="sub-title">¿Qué Hacer?</span>
+                    <h2 class="section-title">Atracciones y Actividades Cercanas</h2>
+                    <p class="section-desc">Puerto Cortés y sus alrededores ofrecen una amplia variedad de entretenimiento, gastronomía e historia.</p>
+                </div>
+
+                <div class="attractions-grid">
+                    <!-- Attraction 1 -->
+                    <div class="attraction-card">
+                        <div class="attraction-icon">
+                            <i class="fa-solid fa-umbrella-beach"></i>
+                        </div>
+                        <h3>Playa Cieneguita</h3>
+                        <p>Playa de aguas tranquilas y cálidas justo al frente de nuestras casas. Perfecta para nadar en familia y relajarse en la arena.</p>
+                    </div>
+
+                    <!-- Attraction 2 -->
+                    <div class="attraction-card">
+                        <div class="attraction-icon">
+                            <i class="fa-solid fa-water"></i>
+                        </div>
+                        <h3>Playa Coca-Cola</h3>
+                        <p>Una de las playas más famosas de Puerto Cortés, con restaurantes locales, música alegre y una amplia franja de arena para caminar.</p>
+                    </div>
+
+                    <!-- Attraction 3 -->
+                    <div class="attraction-card">
+                        <div class="attraction-icon">
+                            <i class="fa-solid fa-chess-rook"></i>
+                        </div>
+                        <h3>Omoa y su historia</h3>
+                        <p>Visita el histórico Castillo de San Fernando de Omoa a solo minutos, una joya colonial rodeada de una costa caribeña impresionante.</p>
+                    </div>
+
+                    <!-- Attraction 4 -->
+                    <div class="attraction-card">
+                        <div class="attraction-icon">
+                            <i class="fa-solid fa-utensils"></i>
+                        </div>
+                        <h3>Restaurantes frente al mar</h3>
+                        <p>Prueba el pescado frito con tajadas de mínimo, sopa de caracol y la gastronomía garífuna en los locales a la orilla de la playa.</p>
+                    </div>
+
+                    <!-- Attraction 5 -->
+                    <div class="attraction-card">
+                        <div class="attraction-icon">
+                            <i class="fa-solid fa-ship"></i>
+                        </div>
+                        <h3>Paseos en lancha</h3>
+                        <p>Alquila un paseo en lancha guiado para explorar la bahía de Puerto Cortés, ver los barcos mercantes de cerca o ir a pescar.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials / Reviews Section -->
+        <section class="section reviews-section" id="reviews">
+            <div class="container">
+                <div class="section-header">
+                    <span class="sub-title">Experiencias Reales</span>
+                    <h2 class="section-title">Lo que dicen nuestros huéspedes</h2>
+                    <p class="section-desc">Historias de personas que disfrutaron de sus vacaciones en nuestras hermosas locaciones.</p>
+                </div>
+
+                <div class="reviews-grid">
+                    <!-- Review 1 -->
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="review-user-info">
+                                <div class="review-avatar">JP</div>
+                                <div>
+                                    <h4 class="review-name">Juan Pérez</h4>
+                                    <span class="review-date">Hace 2 semanas</span>
+                                </div>
+                            </div>
+                            <div class="review-rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="review-text">"La Casa Playa Mar y Sol superó nuestras expectativas. Limpia, espaciosa y con salida directa al mar en Cieneguita. Definitivamente volveremos en nuestras próximas vacaciones."</p>
+                    </div>
+
+                    <!-- Review 2 -->
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="review-user-info">
+                                <div class="review-avatar">MC</div>
+                                <div>
+                                    <h4 class="review-name">María Castro</h4>
+                                    <span class="review-date">Hace 1 mes</span>
+                                </div>
+                            </div>
+                            <div class="review-rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="review-text">"Nos hospedamos en Beach Paradise y la vista al mar es espectacular. Despertar con el sonido de las olas y nadar en la piscina al atardecer fue increíble. La atención por WhatsApp fue muy rápida."</p>
+                    </div>
+
+                    <!-- Review 3 -->
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="review-user-info">
+                                <div class="review-avatar">CG</div>
+                                <div>
+                                    <h4 class="review-name">Carlos Gómez</h4>
+                                    <span class="review-date">Hace 3 semanas</span>
+                                </div>
+                            </div>
+                            <div class="review-rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                            </div>
+                        </div>
+                        <p class="review-text">"Sunset Beach House es perfecta para familias numerosas. Fuimos 10 personas y estuvimos muy cómodos. El área BBQ al lado de la piscina es lo mejor. Ubicación fantástica y muy segura."</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container footer-grid">
+            <div class="footer-col brand-col">
+                <a href="#home" class="footer-logo">
+                    <img src="assets/images/logo.jpg" alt="Kakun Airbnb Logo" class="logo-img-footer">
+                </a>
+                <p class="footer-description">Ofreciendo hospedajes de playa modernos y premium en Puerto Cortés y Cieneguita. Tu comodidad frente al mar es nuestra prioridad.</p>
+                <div class="social-links">
+                    <a href="https://facebook.com" aria-label="Facebook Kakun Airbnb" target="_blank" rel="noopener"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://instagram.com" aria-label="Instagram Kakun Airbnb" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://wa.me/50498527102?text=Hola,%20deseo%20obtener%20informaci%C3%B3n%20sobre%20una%20reserva%20en%20Kakun%20Airbnb." aria-label="WhatsApp" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-col links-col">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="#home">Inicio</a></li>
+                    <li><a href="#accommodations">Alojamientos</a></li>
+                    <li><a href="#map-section">Mapa Interactivo</a></li>
+                    <li><a href="#gallery">Galería de Fotos</a></li>
+                    <li><a href="#attractions">Atracciones</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col contact-col">
+                <h3>Contacto Directo</h3>
+                <ul class="contact-info-list">
+                    <li>
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>Cieneguita, Puerto Cortés, Honduras</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-phone"></i>
+                        <span>+504 9852-7102</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>reservas@kakunairbnb.com</span>
+                    </li>
+                </ul>
+                <a href="https://wa.me/50498527102?text=Hola,%20deseo%20obtener%20informaci%C3%B3n%20sobre%20una%20reserva%20en%20Kakun%20Airbnb." 
+                   target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp-footer">
+                    <i class="fa-brands fa-whatsapp"></i> Chatear por WhatsApp
+                </a>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="container footer-bottom-container">
+                <p>&copy; 2026 Kakun Airbnb. Todos los derechos reservados. Diseñado para ofrecer la mejor experiencia caribeña.</p>
+                <div class="footer-seo-notes">
+                    <span>#AirbnbEnPuertoCortes</span>
+                    <span>#AirbnbEnCieneguita</span>
+                    <span>#HospedajeFrenteAlMarHonduras</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/50498527102?text=Hola,%20deseo%20obtener%20informaci%C3%B3n%20sobre%20una%20reserva%20en%20Kakun%20Airbnb." 
+       class="whatsapp-floating-btn" id="whatsapp-floating" target="_blank" rel="noopener noreferrer" 
+       title="Chatea con nosotros por WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+        <span class="tooltip-text">¿Dudas? Escríbenos</span>
+    </a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    
+    <!-- Custom JS Application -->
+    <script src="app.js"></script>
+</body>
+</html>
